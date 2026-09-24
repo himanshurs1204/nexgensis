@@ -1,4 +1,4 @@
-# Nexgensis Product Desk
+# Nexgensis Product Desk (ReactJS Assignment)
 
 A responsive product administration dashboard built with plain React, JavaScript, Vite, React Router, Axios, and Tailwind CSS.
 
@@ -50,4 +50,4 @@ AI was used to help scaffold the application structure and draft implementation 
 
 This project is deployed on Vercel for quick preview and sharing.
 
-Live demo: [Add deployment link here](https://your-vercel-app-link.vercel.app)
+Live demo: [Add deployment link here](https://nexgensis-mocha.vercel.app/login)
