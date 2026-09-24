@@ -48,4 +48,6 @@ AI was used to help scaffold the application structure and draft implementation 
 
 ## Deployment
 
-Deployment is intentionally left for development. The app is a static Vite build and can later be published to Vercel, Netlify, or another static hosting provider using `npm run build`.
+This project is deployed on Vercel for quick preview and sharing.
+
+Live demo: [Add deployment link here](https://your-vercel-app-link.vercel.app)
