@@ -1,0 +1,14 @@
+@media (max-width: 620px) {
+  .table-wrap { border: 0; background: transparent; }
+  .product-table, .product-table tbody, .product-table tr, .product-table td { display: block; width: 100%; min-width: 0; }
+  .product-table thead { display: none; }
+  .product-table tr { background: #fff; border: 1px solid #e1e9dd; border-radius: 11px; margin-bottom: 9px; padding: 9px; }
+  .product-table td { display: flex; align-items: center; justify-content: space-between; border: 0; padding: 7px 5px; }
+  .product-table td:first-child { display: block; padding-bottom: 11px; }
+  .product-table td:nth-child(2)::before { content: 'Category'; }
+  .product-table td:nth-child(3)::before { content: 'Price'; }
+  .product-table td:nth-child(4)::before { content: 'Rating'; }
+  .product-table td:nth-child(5)::before { content: 'Stock'; }
+  .product-table td::before { color: #91a398; font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .06em; }
+  .product-table td:last-child { justify-content: flex-end; border-top: 1px solid #edf1ea; margin-top: 4px; padding-top: 10px; }
+}

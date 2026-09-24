@@ -1,0 +1,11 @@
+import { useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
+import { useAuth } from '../context/AuthContext.jsx'
+
+export default function LoginPage() {
+    const { user, signIn } = useAuth(); const navigate = useNavigate(); const [form, setForm] = useState({ username: 'emilys', password: 'emilyspass' }); const [error, setError] = useState(''); const [busy, setBusy] = useState(false)
+    if (user) return <Navigate to="/products" replace />
+    async function submit(event) { event.preventDefault(); if (busy) return; setBusy(true); setError(''); try { await signIn(form); navigate('/products') } catch (reason) { setError(reason.message) } finally { setBusy(false) } }
+    return <div className="login-page"><section className="login-art"><div className="brand"><div className="brand-mark">N</div><div className="brand-copy"><span className="brand-name">nexgensis</span><span className="brand-sub">product desk</span></div></div><div><h1>Make every product count.</h1><p>A calm, focused workspace for keeping your catalog sharp, current, and ready to move.</p></div><div className="login-note">inventory control / 01</div></section><section className="login-panel"><div className="login-card"><span className="eyebrow">Welcome back</span><h2>Sign in to your desk</h2><p>Enter your workspace credentials to continue.</p><form onSubmit={submit}><label className="form-label" htmlFor="username">Username</label><input className="form-input" id="username" value={form.username} onChange={(event) => setForm({ ...form, username: event.target.value })} autoComplete="username" /><label className="form-label" htmlFor="password">Password</label><input className="form-input" id="password" type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} autoComplete="current-password" />{error && <div className="form-error">{error}</div>}<button className="primary-btn login-submit" type="submit" disabled={busy}>{busy ? 'Signing in...' : 'Enter workspace'}<ArrowRight size={15} /></button></form><div className="form-footer">secure session / dummyjson api</div></div></section></div>
+}
